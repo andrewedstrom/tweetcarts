@@ -11,15 +11,11 @@ function k(i,j,c)r(i*s+1,j*s+1,i*s+s,j*s+s,c or 8)end
 fx=p()fy=p()t=0o=false
 ::_::
 t+=1
+for i=0,3 do
+if(b(i))d=i
+end
 if t%3==0 and not o then
 cls()
-
-for z in all(a) do
-o=o or z[1]==x and z[2]==y
-k(z[1],z[2],3)
-end
-k(fx,fy)
-k(x,y,11)
 
 add(a,{x,y})
 if(#a>l)del(a,a[1]) 
@@ -30,14 +26,10 @@ fx=p()
 fy=p()
 end
 
-if(b(⬆️))d=0
-if(b(⬇️))d=1
-if(b(⬅️))d=2
-if(b(➡️))d=3
-if(d==0)y-=1
-if(d==1)y+=1
-if(d==2)x-=1
-if(d==3)x+=1
+if(d==2)y-=1
+if(d==3)y+=1
+if(d==0)x-=1
+if(d==1)x+=1
 
 if(x<0)x=w
 if(x>w)x=0
@@ -45,6 +37,12 @@ if(y<0)y=w
 if(y>w)y=0
 
 ?""..l,0,0,7
+for z in all(a) do
+o=o or z[1]==x and z[2]==y
+k(z[1],z[2],3)
+end
+k(fx,fy)
+k(x,y,11)
 end
 if o then
 ?"game over",47,62,7
