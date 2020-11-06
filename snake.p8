@@ -8,7 +8,7 @@ b=btn
 function p()return flr(rnd(w))end
 function k(i,j,c)r(i*s+1,j*s+1,i*s+s,j*s+s,c or 8)end
 
-fx=p()fy=p()t=0o=false
+q=p()e=p()t=0o=false
 ::_::
 t+=1
 for i=0,3 do
@@ -20,10 +20,10 @@ cls()
 add(a,{x,y})
 if(#a>l)del(a,a[1]) 
 
-if x==fx and y==fy then
+if x==q and y==e then
 l+=1
-fx=p()
-fy=p()
+q=p()
+e=p()
 end
 
 if(d==2)y-=1
@@ -41,7 +41,7 @@ for z in all(a) do
 o=o or z[1]==x and z[2]==y
 k(z[1],z[2],3)
 end
-k(fx,fy)
+k(q,e)
 k(x,y,11)
 end
 if o then
