@@ -14,12 +14,12 @@ t+=1
 if t%3==0 and not o then
 cls()
 
-k(fx,fy)
-k(x,y,11)
 for z in all(a) do
 o=o or z[1]==x and z[2]==y
 k(z[1],z[2],3)
 end
+k(fx,fy)
+k(x,y,11)
 
 add(a,{x,y})
 if(#a>l)del(a,a[1]) 
@@ -39,7 +39,7 @@ if(d==0)y-=1
 if(d==1)y+=1
 if(d==2)x-=1
 if(d==3)x+=1
-?""..l
+?""..l,0,0,7
 end
 if o then
 ?"game over",47,62,7
