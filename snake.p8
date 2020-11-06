@@ -8,15 +8,16 @@ b=btn
 function p()return flr(rnd(16))end
 function k(i,j,c)r(i*s+1,j*s+1,i*s+s,j*s+s,c or 8)end
 
-fx=p()fy=p()t=0
+fx=p()fy=p()t=0o=false
 ::_::
 t+=1
-if t%3==0then
+if t%3==0 and not o then
 cls()
 
 k(fx,fy)
 k(x,y,11)
 for z in all(a) do
+o=o or z[1]==x and z[2]==y
 k(z[1],z[2],3)
 end
 
@@ -39,6 +40,9 @@ if(d==1)y+=1
 if(d==2)x-=1
 if(d==3)x+=1
 ?""..l
+end
+if o then
+?"game over",47,62,7
 end
 flip()
 goto _
