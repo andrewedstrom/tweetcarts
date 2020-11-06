@@ -1,11 +1,11 @@
 pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
-x=4a={}s=4d=1l=3y=x
+x=4a={}s=4d=1l=3w=30y=x
 r=rectfill
 b=btn
 
-function p()return flr(rnd(16))end
+function p()return flr(rnd(w))end
 function k(i,j,c)r(i*s+1,j*s+1,i*s+s,j*s+s,c or 8)end
 
 fx=p()fy=p()t=0o=false
@@ -34,11 +34,16 @@ if(b(⬆️))d=0
 if(b(⬇️))d=1
 if(b(⬅️))d=2
 if(b(➡️))d=3
-
 if(d==0)y-=1
 if(d==1)y+=1
 if(d==2)x-=1
 if(d==3)x+=1
+
+if(x<0)x=w
+if(x>w)x=0
+if(y<0)y=w
+if(y>w)y=0
+
 ?""..l,0,0,7
 end
 if o then
