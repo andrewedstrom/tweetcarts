@@ -1,18 +1,18 @@
 pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
-x=4a={}s=4d=1l=3w=30y=x
+x=4a={}d=1l=3w=30y=x
 r=rectfill
 b=btn
+f=flip
 function p()return flr(rnd(w))end
-function k(i,j,c)r(i*s+1,j*s+1,i*s+s,j*s+s,c)end
-q=p()e=p()t=0o=false
+function k(i,j,c)i*=4j*=4r(i,j,i+3,j+3,c)end
+q=p()e=p()o=false
 ::_::
-t+=1
 for i=0,3do
 if(b(i))d=i
 end
-if t%3==0and not o then
+if not o then
 cls()add(a,{x,y})
 if(#a>l)del(a,a[1])
 if(x==q and y==e)l+=1q=p()e=p()
@@ -24,16 +24,17 @@ if(x<0)x=w
 if(x>w)x=0
 if(y<0)y=w
 if(y>w)y=0
-?""..l,0,0,7
 for z in all(a)do
 o=o or z[1]==x and z[2]==y
 k(z[1],z[2],3)
 end
-k(q,e,8)k(x,y,11)end
+k(q,e,8)k(x,y,11)
+?""..l,0,0,7
+end
 if o then
 ?"game over",47,62,7
 end
-flip()goto _
+f()f()f()goto _
 __gfx__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
